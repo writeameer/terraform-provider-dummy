@@ -30,6 +30,7 @@ func resourceServerCreate(d *schema.ResourceData, m interface{}) error {
 func resourceServerRead(d *schema.ResourceData, m interface{}) error {
 	log.Printf("Dumm Provider: read")
 	address := d.Get("address").(string)
+	log.Println(address)
 	d.SetId(address)
 	return nil
 }
