@@ -1,3 +1,3 @@
 resource "dummy_server" "my-server" {
-  address = "3.4.5.6"
+  address = "1.1.1.1"
 }

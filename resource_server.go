@@ -23,25 +23,27 @@ func resourceServer() *schema.Resource {
 }
 
 func resourceServerCreate(d *schema.ResourceData, m interface{}) error {
-	log.Printf("Dumm Provider: create")
+	log.Printf("Dummy Provider: create")
 	return resourceServerRead(d, m)
 }
 
 func resourceServerRead(d *schema.ResourceData, m interface{}) error {
-	log.Printf("Dumm Provider: read")
+	log.Printf("Dummy Provider: read")
+
 	address := d.Get("address").(string)
-	log.Println(address)
 	d.SetId(address)
+	d.Set("address", address)
+	log.Printf("The address is: " + address)
 	return nil
 }
 
 func resourceServerUpdate(d *schema.ResourceData, m interface{}) error {
-	log.Printf("Dumm Provider: update")
+	log.Printf("Dummy Provider: update")
 
 	return resourceServerRead(d, m)
 }
 
 func resourceServerDelete(d *schema.ResourceData, m interface{}) error {
-	log.Printf("Dumm Provider: update")
+	log.Printf("Dummy Provider: update")
 	return nil
 }
